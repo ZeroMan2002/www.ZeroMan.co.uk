@@ -28,9 +28,11 @@ jobs:
           export FLASK_APP=app.py
           export FLASK_ENV=production
           gunicorn -b 0.0.0.0:5000 --workers 4 app:app
+        # Make sure this step runs in the background or in a detached mode
 
-      - name: Run Discord bot
+      - name: Start Discord bot
         run: python bot.py
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        # Make sure this step also runs in the background or in a detached mode
