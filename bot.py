@@ -2,14 +2,17 @@
 import os
 from flask import Flask, request
 import discord
-from discord.ext import commands # type: ignore
+from discord.ext import commands
 
 app = Flask(__name__)
 
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 CHANNEL_ID = int(os.getenv('CHANNEL_ID'))
 
-bot = commands.Bot(command_prefix='!')
+intents = discord.Intents.default()  # Default intents
+intents.message_content = True       # Enable message content intent (needed for reading messages)
+
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 @app.route('/submit', methods=['POST'])
 def submit():
@@ -25,6 +28,9 @@ def submit():
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
+    channel = bot.get_channel(CHANNEL_ID)
+    if channel:
+        await channel.send("Bot is now online!")
 
 if __name__ == "__main__":
     from threading import Thread
@@ -33,6 +39,7 @@ if __name__ == "__main__":
     
     Thread(target=run_bot).start()
     app.run(host='0.0.0.0', port=5000)
+
 
 @bot.event
 async def on_ready():
