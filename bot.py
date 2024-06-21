@@ -33,3 +33,10 @@ if __name__ == "__main__":
     
     Thread(target=run_bot).start()
     app.run(host='0.0.0.0', port=5000)
+
+@bot.event
+async def on_ready():
+    print(f'Logged in as {bot.user}')
+    channel = bot.get_channel(CHANNEL_ID)
+    if channel:
+        await channel.send("Bot is now online!")
