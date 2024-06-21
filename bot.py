@@ -18,6 +18,7 @@ async def on_ready():
     if channel:
         await channel.send("Bot is now online!")
 
-# Run the bot
-if __name__ == "__main__":
+# Add more bot commands and event handlers here as needed
+
+if __name__ == '__main__':
     bot.run(DISCORD_TOKEN)

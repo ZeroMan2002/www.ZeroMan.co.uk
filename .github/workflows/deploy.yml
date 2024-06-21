@@ -23,7 +23,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Start Discord bot
+      - name: Start Flask application
+        run: |
+          export FLASK_APP=app.py
+          export FLASK_ENV=production
+          gunicorn -b 0.0.0.0:5000 --workers 4 app:app
+
+      - name: Run Discord bot
         run: python bot.py
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
