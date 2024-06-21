@@ -43,6 +43,12 @@ background: #2f3640;
     transition: .3s linear;
 }
 
+
+
+.logo:hover{
+    transform:scale(2);
+}
+
 .navigation-menu a:hover{
     background: #fff;
     color: #2f3640;
