@@ -1,15 +1,3 @@
-/* Updated Color Palette */
-:root {
-    --primary-color: #7200ec;     /* Purple */
-    --secondary-color: #00ff11;   /* Green */
-    --accent-color: #ffee00;      /* Yellow */
-    --highlight-color: #ff0000;   /* Red */
-    --link-color: #02e6ff;        /* Blue */
-    --background-color: #f9f9f9;  /* Light Gray */
-    --text-color: #333;           /* Dark Gray */
-}
-
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +7,7 @@
 
 header {
     height: 90px;
-    background: #ffffff; /* White */
+    background: #2f3640;
 }
 
 .inner-width {
@@ -46,7 +34,7 @@ header {
 
 .navigation-menu a {
     margin-left: 10px;
-    color: var(--text-color);
+    color: #ddd;
     text-transform: uppercase;
     font-size: 14px;
     padding: 12px 10px;
@@ -60,13 +48,33 @@ header {
 
 .navigation-menu a:hover {
     background: #fff;
-    color: var(--primary-color);
+    color: #2f3640;
     transform: scale(1.1);
 }
 
 .navigation-menu i {
     margin-right: 8px;
     font-size: 16px;
+}
+
+.home {
+    color: #7200ec; /* Primary Accent - Home */
+}
+
+.shop {
+    color: #00ff11; /* Secondary Accent - Shop */
+}
+
+.contact {
+    color: #ffee00; /* Secondary Accent - Contact */
+}
+
+.videos {
+    color: #ff0000; /* Secondary Accent - Videos */
+}
+
+.about {
+    color: #02e6ff; /* Secondary Accent - About */
 }
 
 .menu-toggle-btn {
@@ -87,7 +95,7 @@ header {
         position: fixed;
         width: 100%;
         max-width: 400px;
-        background: var(--background-color);
+        background: rgb(21, 27, 29);
         top: 90px;
         right: 0;
         display: none;
@@ -99,7 +107,7 @@ header {
         content: "";
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 10px solid var(--background-color);
+        border-bottom: 10px solid rgb(21, 27, 29);
         position: absolute;
         top: -10px;
         right: 10px;
@@ -113,56 +121,4 @@ header {
     .navigation-menu.active {
         display: block;
     }
-}
-
-.contact-form {
-    padding: 40px 0;
-    background: var(--background-color);
-}
-
-.contact-form .inner-width {
-    text-align: center;
-}
-
-.contact-form h2 {
-    font-size: 26px;
-    margin-bottom: 40px;
-    color: var(--text-color);
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    max-width: 600px;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.contact-form textarea {
-    resize: none;
-    height: 200px;
-}
-
-.contact-form button {
-    padding: 12px 30px;
-    border: none;
-    background: var(--primary-color);
-    color: #fff;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.contact-form button:hover {
-    background: #5400a8;
 }
