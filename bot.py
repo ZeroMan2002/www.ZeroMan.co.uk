@@ -15,7 +15,14 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
     channel = bot.get_channel(CHANNEL_ID)
     if channel:
+        print(f'Connected to channel: {channel.name} (ID: {channel.id})')
         await channel.send("Bot is now online!")
+    else:
+        print(f'Channel with ID {CHANNEL_ID} not found.')
+
+@bot.event
+async def on_message(message):
+    print(f'Message received: {message.content}')
 
 # Add more bot commands and event handlers here as needed
 
