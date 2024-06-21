@@ -1,4 +1,3 @@
-# app.py
 import os
 from flask import Flask, request
 import requests
